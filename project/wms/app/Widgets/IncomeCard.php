@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Widgets\BaseDimmer;
 
-class Cards extends BaseDimmer
+class IncomeCard extends BaseDimmer
 {
     /**
      * The configuration array.
@@ -22,16 +22,15 @@ class Cards extends BaseDimmer
      */
     public function run()
     {
-        $count = Voyager::model('User')->count();
-        $string = trans_choice('voyager::dimmer.user', $count);
+        $count = \App\Models\Income::count();
 
         return view('voyager::dimmer', array_merge($this->config, [
-            'icon'   => 'voyager-group',
-            'title'  => "{$count} {$string}",
-            'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
+            'icon'   => 'voyager-double-right',
+            'title'  => "Приходных ордеров: {$count}",
+            'text'   => "",
             'button' => [
-                'text' => __('voyager::dimmer.user_link_text'),
-                'link' => route('voyager.users.index'),
+                'text' => __('Все ордеры'),
+                'link' => route('voyager.incomes.index'),
             ],
             'image' => voyager_asset(''),
         ]));

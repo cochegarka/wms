@@ -14,6 +14,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
+        "phpoffice/phpspreadsheet": "^1.17",
         "tcg/voyager": "^1.4"
     },
     "require-dev": {

@@ -104,12 +104,13 @@ return [
         /*
          * Select default language
          */
-        'default' => 'en',
+        'default' => 'ru',
 
         /*
          * Select languages that are supported.
          */
         'locales' => [
+            'ru',
             'en',
             //'pt',
         ],
@@ -144,11 +145,10 @@ return [
         ],
 
         'widgets' => [
-            'App\\Widgets\\Cards',
-            'App\\Widgets\\Cards',
-            'App\\Widgets\\Cards',
-            'App\\Widgets\\Cards',
-            'App\\Widgets\\Cards',
+            'App\\Widgets\\IncomeCard',
+            'App\\Widgets\\OutcomeCard',
+            'App\\Widgets\\InventarizationCard',
+            'App\\Widgets\\ReportCard',
         ],
 
     ],
